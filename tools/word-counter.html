@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word Counter - Count Words, Characters & Paragraphs | Multi-Tools</title>
+  <meta name="description" content="Free online word counter tool to count words, characters, paragraphs, and reading time. Simple and easy to use.">
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <!-- Header Placeholder -->
+  <div id="header-placeholder"></div>
+  
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+      <div class="row">
+        <!-- Main Tool Area -->
+        <div class="col-lg-8">
+          <div class="tool-container">
+            <h1 class="tool-title">Word Counter</h1>
+            <p class="tool-description">Count the number of words, characters, paragraphs, and estimated reading time in your text.</p>
+            
+            <!-- Tool Form -->
+            <div class="tool-content">
+              <form id="wordCountForm">
+                <div class="mb-3">
+                  <label for="textInput" class="form-label">Enter or paste your text below</label>
+                  <textarea class="form-control" id="textInput" rows="10" placeholder="Type or paste your text here..."></textarea>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <button type="submit" class="btn btn-primary">Count</button>
+                  <button type="button" id="clearButton" class="btn btn-outline-secondary">Clear</button>
+                </div>
+              </form>
+              
+              <!-- Stats Cards -->
+              <div class="row mt-4">
+                <div class="col-md-3 col-6 mb-3">
+                  <div class="card text-center h-100">
+                    <div class="card-body">
+                      <h5 class="card-title">Words</h5>
+                      <p class="card-text display-6" id="wordCount">0</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 col-6 mb-3">
+                  <div class="card text-center h-100">
+                    <div class="card-body">
+                      <h5 class="card-title">Characters</h5>
+                      <p class="card-text display-6" id="charCount">0</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 col-6 mb-3">
+                  <div class="card text-center h-100">
+                    <div class="card-body">
+                      <h5 class="card-title">Paragraphs</h5>
+                      <p class="card-text display-6" id="paragraphCount">0</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 col-6 mb-3">
+                  <div class="card text-center h-100">
+                    <div class="card-body">
+                      <h5 class="card-title">Reading Time</h5>
+                      <p class="card-text display-6" id="readingTime">0</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Additional Stats -->
+              <div class="card mt-4">
+                <div class="card-header">Additional Statistics</div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <p>Characters (without spaces): <span id="charNoSpaces">0</span></p>
+                      <p>Sentences: <span id="sentenceCount">0</span></p>
+                    </div>
+                    <div class="col-md-6">
+                      <p>Average word length: <span id="avgWordLength">0</span> characters</p>
+                      <p>Average sentence length: <span id="avgSentenceLength">0</span> words</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- How to Use Section -->
+          <div class="tool-container mt-4">
+            <h2>How to Use Word Counter</h2>
+            <div class="how-to-use">
+              <ol>
+                <li>Enter or paste your text into the text area above.</li>
+                <li>Click the "Count" button to analyze your text.</li>
+                <li>View the statistics showing word count, character count, paragraph count, and estimated reading time.</li>
+                <li>Additional statistics include characters without spaces, sentence count, and average word and sentence length.</li>
+                <li>Click "Clear" to reset the form and start with new text.</li>
+              </ol>
+              <p>The word counter updates as you type, providing real-time statistics about your text.</p>
+            </div>
+          </div>
+          
+          <!-- SEO-friendly content -->
+          <div class="tool-container mt-4">
+            <h2>About Word Counting</h2>
+            <p>Word counting is an essential task for writers, students, and professionals who need to meet specific word limits for their content. Whether you're writing an essay, blog post, article, or any other type of content, our word counter tool helps you track your progress and ensure you meet your word count requirements.</p>
+            
+            <h3 class="mt-4">Why Use a Word Counter?</h3>
+            <p>There are several reasons why you might need to count words:</p>
+            <ul>
+              <li><strong>Academic Requirements:</strong> Essays, dissertations, and research papers often have specific word count requirements.</li>
+              <li><strong>Content Creation:</strong> Writers need to meet word count targets for articles, blog posts, and other content.</li>
+              <li><strong>SEO Optimization:</strong> Knowing your word count helps in optimizing content for search engines.</li>
+              <li><strong>Translation Services:</strong> Translators often charge by word count.</li>
+              <li><strong>Social Media:</strong> Platforms like Twitter have character limits.</li>
+            </ul>
+            
+            <h3 class="mt-4">Reading Time Estimation</h3>
+            <p>Our tool also provides an estimated reading time based on an average reading speed of 200-250 words per minute for adults. This can be useful for:</p>
+            <ul>
+              <li>Planning presentations or speeches</li>
+              <li>Estimating how long it will take readers to consume your content</li>
+              <li>Optimizing content length for different platforms and audiences</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Sidebar -->
+        <div class="col-lg-4">
+          <!-- Ad Space -->
+          <div class="ad-container mb-4">
+            <p class="mb-0">Advertisement Space</p>
+          </div>
+          
+          <!-- Related Tools -->
+          <div class="tool-container">
+            <h3>Related Text Tools</h3>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><a href="character-counter.html">Character Counter</a></li>
+              <li class="list-group-item"><a href="case-converter.html">Case Converter</a></li>
+              <li class="list-group-item"><a href="text-to-speech.html">Text to Speech</a></li>
+              <li class="list-group-item"><a href="speech-to-text.html">Speech to Text</a></li>
+              <li class="list-group-item"><a href="grammar-checker.html">Grammar Checker</a></li>
+            </ul>
+          </div>
+          
+          <!-- Another Ad Space -->
+          <div class="ad-container my-4">
+            <p class="mb-0">Advertisement Space</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+  
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Custom JS -->
+  <script src="../assets/js/main.js"></script>
+  
+  <!-- Tool-specific JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('wordCountForm');
+      const textInput = document.getElementById('textInput');
+      const clearButton = document.getElementById('clearButton');
+      
+      // Update counts on input
+      textInput.addEventListener('input', updateCounts);
+      
+      // Handle form submission
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        updateCounts();
+      });
+      
+      // Handle clear button
+      clearButton.addEventListener('click', function() {
+        textInput.value = '';
+        updateCounts();
+      });
+      
+      // Function to update all counts
+      function updateCounts() {
+        const text = textInput.value;
+        
+        // Calculate counts
+        const wordCount = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
+        const charCount = text.length;
+        const charNoSpaces = text.replace(/\s+/g, '').length;
+        
+        // Calculate paragraphs (separated by at least one blank line)
+        const paragraphs = text.trim() === '' ? 0 : text.trim().split(/\n\s*\n/).length;
+        
+        // Calculate sentences (roughly)
+        const sentences = text.trim() === '' ? 0 : text.trim().split(/[.!?]+(?=\s|$)/).filter(s => s.trim().length > 0).length;
+        
+        // Calculate reading time (assuming 225 words per minute)
+        const readingTimeMinutes = Math.ceil(wordCount / 225);
+        
+        // Calculate averages
+        const avgWordLength = wordCount === 0 ? 0 : (charNoSpaces / wordCount).toFixed(1);
+        const avgSentenceLength = sentences === 0 ? 0 : (wordCount / sentences).toFixed(1);
+        
+        // Update the UI
+        document.getElementById('wordCount').textContent = wordCount;
+        document.getElementById('charCount').textContent = charCount;
+        document.getElementById('paragraphCount').textContent = paragraphs;
+        document.getElementById('readingTime').textContent = readingTimeMinutes + ' min';
+        document.getElementById('charNoSpaces').textContent = charNoSpaces;
+        document.getElementById('sentenceCount').textContent = sentences;
+        document.getElementById('avgWordLength').textContent = avgWordLength;
+        document.getElementById('avgSentenceLength').textContent = avgSentenceLength;
+      }
+      
+      // Initial update
+      updateCounts();
+    });
+  </script>
+</body>
+</html> 
